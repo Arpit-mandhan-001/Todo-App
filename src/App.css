@@ -1,42 +1,194 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Global Styles */
+body {
+  background-color: #121212;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading */
+.heading {
+  margin-top: 50px;
   text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1.5px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Todo Form Container */
+.add-todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Input Group: Date + Button */
+.input-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Todo Text Input */
+.todo-input {
+  width: 60%;
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 1.3rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  outline: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Todo Date Input */
+.todo-date {
+  width: 350px;
+  height: 33px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  outline: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Input Focus Effect */
+.todo-input:focus,
+.todo-date:focus {
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
+
+/* Add Button */
+.add-button {
+  height: 50px;
+  padding: 0 25px;
+  background: linear-gradient(135deg, #015667, #0077b6);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Add Button Hover */
+.add-button:hover {
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  transform: scale(1.05);
+}
+
+.welcome-message{
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 400;
+    color:rgb(226, 144, 36);
+}
+
+/* Task Container */
+.task-show {
+  background-color: #1e1e1e;
+  padding: 15px 20px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+  height: 20px;
+}
+
+.task-info {
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 15px;
+}
+
+/* Task Name */
+.task-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+  color: #ffffff;
+}
+
+/* Task Date */
+.task-date {
+  font-size: 1rem;
+  color: #aaaaaa;
+  white-space: nowrap;
+}
+
+/* Delete Button */
+.task-delete {
+  padding: 10px 15px;
+  background-color: #ff4b5c;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.task-delete:hover {
+  background-color: #e63946;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .todo-input {
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .todo-date {
+    width: 90%;
+    height: 45px;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .add-button {
+    width: 90%;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .input-group {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.read-the-docs {
-  color: #888;
+  .task-show {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .task-info {
+    max-width: 75%;
+  }
+
+  .task-name {
+    max-width: 150px;
+  }
 }
