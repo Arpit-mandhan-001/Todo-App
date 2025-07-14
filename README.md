@@ -17,4 +17,5 @@ Delete individual tasks.
 Responsive & modern UI using custom CSS.
 
 📸 You can view the live demo here: 
+
 [link Preview](https://todo-lvztljswn-arpits-projects-dd5b6ad9.vercel.app/)
